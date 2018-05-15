@@ -19,13 +19,14 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.EditText;
+
+import com.brigafrica.koyako.R;
 
 
 /**
  * Custom version of EditText that shows and hides password onClick of the visibility icon
  */
-public class ShowHidePasswordEditText extends EditText {
+public class ShowHidePasswordEditText extends android.support.v7.widget.AppCompatEditText {
 
     private static final String TAG = ShowHidePasswordEditText.class.getSimpleName();
     private boolean isShowingPassword = false;
@@ -63,15 +64,15 @@ public class ShowHidePasswordEditText extends EditText {
         if (attrs != null) {
             TypedArray attrsArray = getContext().obtainStyledAttributes(attrs, R.styleable.ShowHidePasswordEditText);
 
-            visibilityIndicatorShow = attrsArray.getResourceId(R.styleable.ShowHidePasswordEditText_drawable_show, R.drawable.ic_visibility_grey_900_24dp);
-            visibilityIndicatorHide = attrsArray.getResourceId(R.styleable.ShowHidePasswordEditText_drawable_hide, R.drawable.ic_visibility_off_grey_900_24dp);
+            visibilityIndicatorShow = attrsArray.getResourceId(R.styleable.ShowHidePasswordEditText_drawable_show, R.drawable.ic_visibility_black_24dp);
+            visibilityIndicatorHide = attrsArray.getResourceId(R.styleable.ShowHidePasswordEditText_drawable_hide, R.drawable.ic_visibility_off_black_24dp);
             tintColor = attrsArray.getColor(R.styleable.ShowHidePasswordEditText_tint_color, 0);
             additionalTouchTargetSize = attrsArray.getDimensionPixelSize(R.styleable.ShowHidePasswordEditText_additionalTouchTargetSize, DEFAULT_ADDITIONAL_TOUCH_TARGET_SIZE);
 
             attrsArray.recycle();
         } else {
-            visibilityIndicatorShow = R.drawable.ic_visibility_grey_900_24dp;
-            visibilityIndicatorHide = R.drawable.ic_visibility_off_grey_900_24dp;
+            visibilityIndicatorShow = R.drawable.ic_visibility_black_24dp;
+            visibilityIndicatorHide = R.drawable.ic_visibility_off_black_24dp;
 
         }
 
